@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="header">
+        <mat-icon fontIcon="navigate_before"></mat-icon>
+        Crear Presupuesto
+    </div>
+    <div class="main-content">
+        Imagenes adjuntas al Presupuesto
+        <div class="buttons-top">
+            <button class="blue-button">
+                <mat-icon fontIcon="camera_alt"></mat-icon>
+            </button>
+            <button class="blue-button">
+                <mat-icon fontIcon="file_upload"></mat-icon>
+            </button>
+            <button class="blue-button">
+                <mat-icon fontIcon="create"></mat-icon>
+            </button>
+            <button class="blue-button">
+                <mat-icon fontIcon="image"></mat-icon>
+            </button>
+        </div>
+
+        <div class="services">
+            Servicios
+            <div class="services-container">
+                <div class="title">
+                    <div class="left">Items</div>
+                    <div class="right">                        
+                        <mat-icon fontIcon="delete"></mat-icon>                        
+                    </div>
+                </div>
+                <div class="photos">
+                    Fotos adjuntas
+                    <div class="photo">
+                        <button class="blue-button">
+                            <mat-icon fontIcon="image"></mat-icon>
+                        </button>
+                    </div> 
+                    <div class="comment">
+                        <textarea class="commentbox" placeholder="Comentario"></textarea>
+                        <div class="empty">
+                            <mat-icon fontIcon="delete"></mat-icon> Vaciar
+                        </div>
+                    </div>  
+                    <div class="buttons">
+                        <div class="products">
+                            <mat-icon fontIcon="add"></mat-icon> Productos
+                        </div>
+                    </div>        
+                    <div class="suggested">
+                        <div class="title">
+                            Sugeridos:
+                        </div>                        
+                        <div class="suggested-list" *ngFor="let product of productSuggested" (click)="addItem(product)">
+                            {{product.SKU}} : {{product.Nombre}} / {{product.Marcas}}, {{product.Precio}}$
+                        </div>
+                    </div>  
+                    <div class="products">
+                        <div class="title">
+                            Productos
+                        </div>
+                        <div class="product" *ngFor="let product of productSelected">
+                            <div class="name">
+                                {{product.Nombre}}
+                            </div>
+                            <div class="price">
+                                {{product.Precio}}
+                            </div>
+                            <div class="button-add">
+                                <mat-icon fontIcon="delete"></mat-icon> 1 <mat-icon fontIcon="add"></mat-icon>
+                            </div>
+                        </div>
+                        <div class="total" *ngIf="productSelected">
+                            Total: {{calcTotal()}}
+                        </div>
+                    </div>       
+                </div>
+            </div>
+        </div>        
+    </div>
+    <div class="buttons-bot">
+            <div class="left" (click)="close()">
+                Cancelar
+            </div>
+            <div class="right" (click)="close()">
+                Guardar
+            </div>
+        </div>
+</div>

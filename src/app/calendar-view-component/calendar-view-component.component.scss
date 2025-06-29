@@ -1,0 +1,53 @@
+.calendar-wrapper {
+  width: 100%;
+  background: #f0f4f7;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0b1d32;
+    color: white;
+    padding: 1rem;
+    .menu-icon {
+      font-size: 1.5rem;
+    }    
+  }
+  .status-legend {
+      display: flex;
+      align-items: center;      /* ⬅️ Vertically centers content */
+      justify-content: center;  /* ⬅️ Optional: horizontally center too */
+      gap: 5px;
+      margin-top: 16px;
+      margin-left: 20px;
+      margin-right: 20px;
+      .dot {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;        
+        display: inline-block;
+        margin-right: 5px;
+      }
+      .green { background: green; }
+      .blue { background: blue; }
+      .red { background: red; }
+      .yellow { background: orange; }
+      
+      .nav-icons{
+        display: flex;
+        gap: 24px;
+        margin-left: auto; 
+      }
+    }
+  .calendar-body {
+    padding: 1rem;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      th, td {
+        border: 1px solid #ccc;
+        padding: 0.5rem;
+        text-align: center;
+      }
+    }
+  }
+}
